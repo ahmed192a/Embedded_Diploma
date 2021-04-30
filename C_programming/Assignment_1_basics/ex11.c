@@ -2,7 +2,9 @@
 
 int main()
 {
-    float num0, num1, num2, max;
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
+    float num0;
     printf("Entre a number: ");
     scanf("%f", &num0);
     if(num0 > 0){

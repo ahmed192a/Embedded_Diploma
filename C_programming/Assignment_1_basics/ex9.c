@@ -2,11 +2,13 @@
 
 int main()
 {
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
     char c;
-    char vowels[5] = {a, e, o , u, i };
-    
+    char vowels[5] = {'a', 'e', 'o' , 'u', 'i'};
+
     printf ("Enter an alphabet: ");
-    scanf("%c", c);
+    scanf("%c", &c);
     if(c <97){
         c += 32;
     }

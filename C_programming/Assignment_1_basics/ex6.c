@@ -2,6 +2,8 @@
 
 int main()
 {
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
     float a, b, tmp;
     // getting the input
     printf("Enter value of a: ");

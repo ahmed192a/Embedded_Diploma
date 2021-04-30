@@ -2,6 +2,8 @@
 
 int main()
 {
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
     float num0, num1, num2, max;
     printf("Entre three numbers: ");
     scanf("%f %f %f", &num0, &num1, &num2);
