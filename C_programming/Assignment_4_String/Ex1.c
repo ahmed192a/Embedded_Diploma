@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h>
 int main()
 {
 
@@ -10,13 +10,14 @@ int main()
 	char c;
 	int count=0;
 	printf("Enter a string: ");
-	scanf("%s",s);
-	printf("Enter a character to find a frequency: \n");
-	scanf("%c",&c);
-	for(int i = 0; s[i]; i++){
+	gets(s);
+	printf("Enter a character to find a frequency: ");
+	c = getchar();
+	
+	for(int i = 0; i<strlen(s); i++){
 		if(s[i] == c) count++;
 	}
-	printf("Frequency of %c = %d",c,count);
+	printf("Frequency of %c = %d\n",c,count);
 
     return 0;
 }

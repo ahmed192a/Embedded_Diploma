@@ -9,11 +9,11 @@ int main()
 	char s[20];
 	int count=0;
 	printf("Enter a string: ");
-	scanf("%s",s);
+	gets(s);
 
 
 	for( ; s[count]; count++);
 
-	printf("Length of string = %d",count);
+	printf("Length of string = %d\n",count);
     return 0;
 }

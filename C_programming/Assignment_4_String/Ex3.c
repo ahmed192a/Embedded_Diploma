@@ -10,7 +10,8 @@ int main()
 	char r[20];
 	int l;
 	printf("Enter a string: ");
-	scanf("%s",s);
+	gets(s);
+	//gets(s);
 	l = strlen(s)-1;
 
 	for(int i = 0 ; i<=l; i++){
@@ -18,6 +19,6 @@ int main()
 	}
 	r[l+1]='\0';
 
-	printf("Reversed string = %s",r);
+	printf("Reversed string = %s\n",r);
     return 0;
 }

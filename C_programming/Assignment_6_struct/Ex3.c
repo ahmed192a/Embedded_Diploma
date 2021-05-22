@@ -24,7 +24,7 @@ int main()
 
 	d3.real = d1.real + d2.real;
 	d3.img = d1.img + d2.img ;
-	printf("\nSum=%0.2f+%0.2fi", d3.real, d3.img);
+	printf("\nSum=%0.2f+%0.2fi\n", d3.real, d3.img);
 
     return 0;
 }
