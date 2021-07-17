@@ -1,0 +1,12 @@
+arm-none-eabi-gcc.exe -c -g -mcpu=arm926ej-s -o0 -I . app.c  -o app.o
+arm-none-eabi-gcc.exe -c -g -mcpu=arm926ej-s -o0 -I . uart.c -o uart.o
+arm-none-eabi-objdump.exe -D app.o >> app.s
+arm-none-eabi-objdump.exe -D uart.o>> uart.s
+arm-none-eabi-as.exe -g -mcpu=arm926ej-s startup.s -o startup.o
+arm-none-eabi-objdump.exe -h startup.o
+arm-none-eabi-ld.exe -T linker_script.ld app.o uart.o startup.o -o app.elf
+arm-none-eabi-objdump.exe -h app.elf
+arm-none-eabi-objdump.exe -D app.elf
+arm-none-eabi-ld.exe -T linker_script.ld app.o uart.o startup.o -o app.elf -Map=Map_file.map
+qemu-system-arm -M versatilepb -m 128M -nographic -kernel app.bin
+
