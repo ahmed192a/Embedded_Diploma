@@ -1,15 +1,22 @@
-/*
- * LogicSystem.c
- *
- *      Author: Ahmed
+/**
+ * @file LogicSystem.c
+ * @author Ahmed Mohamed (ahmed.mohamed.eng.25@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-11-14 @ 15:11:82
+ * 
+ * @copyright Copyright (c) 2022
+ * 
  */
 #include "LogicSystem.h"
 #include "string.h"
-int kh = 0;
+static int students_count = 0;
+struct Student StudentMemory[student_size]; // array of structure size 50 student
 
 void add_student_file()
 {
 	// open file implementation
+	
 }
 void add_student_manually()
 {
@@ -20,7 +27,7 @@ void add_student_manually()
 	DPRINTF("Enter the Roll number : ");
 	scanf("%d",&r );
 	if(r!= 0 && StudentMemory[r].roll == 0){
-		kh++;
+		students_count++;
 		StudentMemory[r-1].roll = r;
 		DPRINTF("Enter the first name of the student : ");
 		scanf("%s", StudentMemory[r-1].fname);
@@ -36,9 +43,9 @@ void add_student_manually()
 		}
 		DPRINTF("[INFO] Student details is added successfully\n");
 		DPRINTF("---------------------------------------\n");
-		DPRINTF("[INFO] The total number of students %d\n", kh);
+		DPRINTF("[INFO] The total number of students %d\n", students_count);
 		DPRINTF("[INFO] you can add up to %d students\n", student_size);
-		DPRINTF("[INFO] you can add %d more students\n", student_size-kh);
+		DPRINTF("[INFO] you can add %d more students\n", student_size-students_count);
 		DPRINTF("---------------------------------------\n");
 	}
 	else{
@@ -133,9 +140,9 @@ void find_c() // by course id
 void tot_s()
 {
 	DPRINTF("---------------------------------------\n");
-	DPRINTF("[INFO] The total number of students %d\n", kh);
+	DPRINTF("[INFO] The total number of students %d\n", students_count);
 	DPRINTF("[INFO] you can add up to %d students\n", student_size);
-	DPRINTF("[INFO] you can add %d more students\n", student_size-kh);
+	DPRINTF("[INFO] you can add %d more students\n", student_size-students_count);
 	DPRINTF("---------------------------------------\n");
 }
 void del_s()
@@ -146,7 +153,7 @@ void del_s()
 	scanf("%d",&r);
 	if(StudentMemory[r-1].roll !=0){
 		StudentMemory[r-1].roll = 0;
-		kh--;
+		students_count--;
 		DPRINTF("[INFO] The Roll number is removed successfully\n");
 	}
 	else{
@@ -219,7 +226,7 @@ void up_s()
 void print_all_students()
 {
 	int i, j;
-	if(kh==0){
+	if(students_count==0){
 		DPRINTF("[ERROR] There are no students yet\n");
 		DPRINTF("---------------------------------------\n");
 		return;

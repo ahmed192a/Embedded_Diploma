@@ -1,11 +1,12 @@
-/*
- ============================================================================
- Name        : Student.c
- Author      : Ahmed
- Version     :
- Copyright   : @copywrite Ahmed
- Description : Student Management System
- ============================================================================
+/**
+ * @file main.c
+ * @author Ahmed Mohamed (ahmed.mohamed.eng.25@gmail.com)
+ * @brief Student Management System
+ * @version 0.1
+ * @date 2022-11-14 @ 15:11:60
+ * 
+ * @copyright Copyright (c) 2022
+ * 
  */
 
 #include <stdio.h>

@@ -1,7 +1,12 @@
-/*
- * LogicSystem.h
- *
- *      Author: Ahmed
+/**
+ * @file LogicSystem.h
+ * @author Ahmed Mohamed (ahmed.mohamed.eng.25@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-11-14 @ 15:11:46
+ * 
+ * @copyright Copyright (c) 2022
+ * 
  */
 
 #ifndef LOGICSYSTEM_H_
@@ -16,6 +21,8 @@
 		fflush(stdin);}
 
 #define student_size 50
+
+
 struct Student{
 	char fname[20];
 	char lname[20];
@@ -24,7 +31,7 @@ struct Student{
 	int cid[5];
 };
 
-struct Student StudentMemory[student_size]; // array of structure size 50 student
+extern struct Student StudentMemory[]; // array of structure size 50 student
 
 void add_student_file();
 void add_student_manually();
